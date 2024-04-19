@@ -1,0 +1,18 @@
+<h1>Hellow Ruby</h1>
+<div>
+<%= link_to "新しい投稿" , new_post_path %>
+</div>
+<ul>
+<% @posts.each do |post| %>
+<li>
+<h2><%= post.title %></h2>
+<p><%= post.content %></p>
+<span><%= post.created_at %></span>
+<div>
+<%= button_to "削除", post_path(post), method: :delete, data: { confirm: "削除しますか？" } %>
+
+</div>
+</li>
+<% end %>
+ <%# (post)と記述することで勝手に/idを指定してくれる %>
+</ul>
